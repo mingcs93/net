@@ -35,7 +35,7 @@ class Poller
   /// Must be called in the loop thread.
   virtual void removeChannel(Channel* channel) = 0;
 
-  virtual bool hasChannel(Channel* channel) const;
+  bool hasChannel(Channel* channel) const;
 
   //static Poller* newDefaultPoller(EventLoop* loop);
 

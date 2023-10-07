@@ -23,13 +23,13 @@ typedef int          socklen_t;
 typedef unsigned int in_addr_t;
 
 //Windows 上没有这些结构的定义，为了移植方便，手动定义这些结构
-#define  XPOLLIN         1
+#define  XPOLLIN         1         //表示对应的文件描述字可以读；
 #define  XPOLLPRI        2
-#define  XPOLLOUT        4
+#define  XPOLLOUT        4         //表示对应的文件描述字可以写；
 #define  XPOLLERR        8 
-#define  XPOLLHUP        16
+#define  XPOLLHUP        16        //表示对应的文件描述字被挂起；
 #define  XPOLLNVAL       32
-#define  XPOLLRDHUP      8192
+#define  XPOLLRDHUP      8192      //表示套接字的一端已经关闭，或者半关闭；
 
 #define  XEPOLL_CTL_ADD  1
 #define  XEPOLL_CTL_DEL  2

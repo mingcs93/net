@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 {
 #ifdef _DEBUG
 	CAsyncLog::init("tcpServerTest");
-	CAsyncLog::setLevel(LOG_LEVEL_DEBUG);
+	CAsyncLog::setLevel(LOG_LEVEL_ERROR);
 #else
 	CAsyncLog::init("tcpServerTest");
 	CAsyncLog::setLevel(LOG_LEVEL_DEBUG);

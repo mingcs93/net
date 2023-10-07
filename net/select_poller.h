@@ -30,7 +30,6 @@ private:
 private:
     typedef std::vector<struct epoll_event> EventList;
 
-    int             epollfd_;
     EventList       events_;
 
 };

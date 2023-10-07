@@ -47,7 +47,7 @@ public:
 
 	/// Tie this channel to the owner object managed by shared_ptr,
 	/// prevent the owner object being destroyed in handleEvent.
-	void tie(const std::shared_ptr<void>&);
+	void tie(const std::shared_ptr<void>& obj);
 
 	int fd() const { return (int)fd_; }
 	int events() const { return events_; }

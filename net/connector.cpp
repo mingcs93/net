@@ -164,8 +164,7 @@ void Connector::handleWrite()
 
     if (state_ == kConnecting)
     {
-        //int sockfd = removeAndResetChannel();
-        int sockfd = channel_->fd();
+        int sockfd = removeAndResetChannel();
         int err = SocketsOps::getSocketError(sockfd);
         if (err)
         {
@@ -195,8 +194,8 @@ void Connector::handleWrite()
     {
         // what happened?
         //assert(state_ == kDisconnected);
-        if (state_ != kDisconnected)
-            LOGSYSE("state_ != kDisconnected");
+        //if (state_ != kDisconnected)
+        //    LOGSYSE("state_ != kDisconnected");
     }
 }
 

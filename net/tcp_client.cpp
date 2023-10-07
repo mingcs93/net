@@ -100,6 +100,13 @@ void TcpClient::stop()
     connector_->stop();
 }
 
+void TcpClient::sendMessage(const std::string& msg)
+{
+    if (connection_) {
+        connection_->send(msg);
+    }
+}
+
 void TcpClient::newConnection(int sockfd)
 {
     loop_->assertInLoopThread();

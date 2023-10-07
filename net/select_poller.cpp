@@ -91,13 +91,12 @@ Timestamp SelectPoller::poll(int timeoutMs, ChannelList* activeChannels)
 
 void SelectPoller::fillActiveChannels(int numEvents, ChannelList* activeChannels, fd_set& readfds, fd_set& writefds) const
 {
-    Channel* channel = nullptr;
-    bool eventTriggered = false;
     //TODO：每次遍历channels_，效率太低，能否改进？
     int currentCount = 0;
     for (const auto& iter : channels_)
     {
-        channel = iter.second;
+        Channel* channel = iter.second;
+        bool eventTriggered = false;
 
         if (FD_ISSET(iter.first, &readfds))
         {
@@ -115,7 +114,7 @@ void SelectPoller::fillActiveChannels(int numEvents, ChannelList* activeChannels
         {
             activeChannels->push_back(channel);
             //重置标志
-            eventTriggered = false;
+            //eventTriggered = false;
 
             ++ currentCount;
             if (currentCount >= numEvents)

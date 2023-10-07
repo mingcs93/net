@@ -59,6 +59,8 @@ public:
         writeCompleteCallback_ = cb;
     }
 
+    void sendMessage(const std::string& msg);
+
 private:
     /// Not thread safe, but in loop
     void newConnection(int sockfd);
